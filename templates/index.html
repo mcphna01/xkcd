@@ -1,10 +1,11 @@
 {%extends "base.html"%}
 
 {%block content%}
-<h1>Password Generator</h1>
-<form action="/genpass">
+<h1 style="text-align:center">Password Generator</h1>
+<form action="/genpass" class="form-horizontal">
+	<div class="col-xs-2">
     <label for="minlen">Minimum Password Length</label>
-	<select type="text" id="minlen" name="min_length">
+	<select class="form-control" type="text" id="minlen" name="min_length" >
         <option value="12">12</option>
         <option value="13">13</option>
         <option value="14">14</option>
@@ -28,9 +29,11 @@
         <option value="32">32</option>
     </select>
     <br>
+    </div>
 
+    <div class="col-xs-2">
 	<label for="maxlen">Maximum Password Length</label>
-	<select type="text" id="maxlen" name="max_length">
+	<select class="form-control" type="text" id="maxlen" name="max_length">
 		<option value="18">18</option>
         <option value="19">19</option>
         <option value="20">20</option>
@@ -48,9 +51,11 @@
         <option value="32">32</option>
     </select>
     <br>
+    </div>
 
+    <div class="col-xs-2">
     <label for="minwordlen">Minimum Word Length</label>
-	<select type="text" id="minwordlen" name="min_word_length">
+	<select class="form-control" type="text" id="minwordlen" name="min_word_length">
 		<option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
@@ -59,23 +64,29 @@
 		<option value="8">8</option>
     </select>
     <br>
+    </div>
 
+    <div class="col-xs-2">
     <label for="maxwordlen">Maximum Word Length</label>
-	<select type="text" id="maxwordlen" name="max_word_length">
+	<select class="form-control" type="text" id="maxwordlen" name="max_word_length">
 		<option value="10">10</option>
         <option value="11">11</option>
         <option value="12">12</option>
     </select>
     <br>
+    </div>
 
 	<label for="numsub">Enable Number Substitution</label>
 	<input type="checkbox" name="num_sub" id="numsub" value="numsub">
 	<br>
 
-	<label for="easy">Enable Easy Typing?</label>
+	<label for="easy">Enable Easy Typing</label>
 	<input type="checkbox" name="easy" id="easy" value="easy">
 	<br>
 
-	<input type="submit">
+
+	<div class="col-xs-2">
+	<button class="form-control btn btn-warning" type="submit">Submit</button>
+	</div>
 </form>
 {%endblock%}

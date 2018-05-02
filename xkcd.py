@@ -25,10 +25,15 @@ def easyscore(word):
 def genpass():
 	words = open("words.txt",'r')
 	wordlist = [word.strip() for word in words]
-	min_length=int(request.args.get('min_length'))
-	max_length=int(request.args.get('max_length'))
 	min_word_length=int(request.args.get('min_word_length'))
 	max_word_length=int(request.args.get('max_word_length'))
+	min_length=int(request.args.get('min_length'))
+	if min_length<4*min_word_length:
+		min_length=4*min_word_length
+	max_length=int(request.args.get('max_length'))
+	if max_length<4*max_word_length:
+		max_length=4*max_word_length
+	
 
 	numletters={'e':3,'s':5,'o':0,'l':1,'z':2}
 
